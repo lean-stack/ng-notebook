@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
 import 'rxjs/Rx';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 interface ITodoOperation extends Function {
   (todos: Todo[]): Todo[]
@@ -15,19 +16,9 @@ interface ITodoOperation extends Function {
 export class TodoService {
 
   todos: Observable<Todo[]>;
-
-  private ops = new Subject<ITodoOperation>();
-
+  todosSource$ = new BehaviorSubject<Todo[]>([]);
+  
   constructor() { 
-
-    this.todos = this.ops
-      .scan( (todos, op) => { return op(todos); } , [] )
-      .publishReplay(1)
-      .refCount();
-
-    // and starting the engines
-    this.ops.next( todos => todos);
-    
+    this.todos = this.todosSource$.asObservable();
   }
-
 }
