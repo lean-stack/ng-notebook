@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoInputComponent implements OnInit {
 
+  public txt: string;
+
   constructor() { }
 
   ngOnInit() {
