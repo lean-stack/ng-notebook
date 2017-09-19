@@ -1,4 +1,4 @@
 <section>
-  <todo-input></todo-input>
-  <todo-list></todo-list>
+  <todo-input (todoCreated)="createTodo($event)"></todo-input>
+  <todo-list [todos]="todos | async"></todo-list>
 </section>
