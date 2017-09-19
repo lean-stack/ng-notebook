@@ -6,6 +6,7 @@ import { TodoAppComponent } from './todo-app/todo-app.component';
   imports: [
     CommonModule
   ],
-  declarations: [TodoAppComponent]
+  declarations: [TodoAppComponent],
+  exports: [TodoAppComponent]
 })
 export class TodosModule { }
