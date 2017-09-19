@@ -4,10 +4,12 @@ import { TodoAppComponent } from './todo-app/todo-app.component';
 import { TodoService } from "./todo/todo.service";
 import { TodoInputComponent } from './todo-input/todo-input.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   declarations: [TodoAppComponent, TodoInputComponent, TodoListComponent],
   exports: [TodoAppComponent],
