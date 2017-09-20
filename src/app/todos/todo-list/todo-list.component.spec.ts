@@ -4,6 +4,7 @@ import { TodoListComponent } from './todo-list.component';
 import { DebugElement } from "@angular/core";
 import { By } from "@angular/platform-browser";
 import { TodoItemComponent } from "../todo-item/todo-item.component";
+import { FormsModule } from "@angular/forms";
 
 describe('TodoListComponent', () => {
   let component: TodoListComponent;
@@ -12,6 +13,7 @@ describe('TodoListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [FormsModule],
       declarations: [ TodoListComponent, TodoItemComponent ]
     })
     .compileComponents();
@@ -30,8 +32,17 @@ describe('TodoListComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should display nothing for an empty todos array', () => {
+    component.todos = [];
+    fixture.detectChanges();
+
+    expect(fixture.debugElement.query(By.css('div')).nativeElement.classList).toContain('hidden');
+  });
+
   it('should have zero list items for an empty todos array', () => {
     component.todos = [];
+    fixture.detectChanges();
+
     expect(listEl.children.length).toBe(0);
   });
 
