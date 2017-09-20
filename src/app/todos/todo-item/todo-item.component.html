@@ -1,3 +1,7 @@
-<div>
-  <span>{{ todo?.txt }}</span>
+<div [ngClass]="{ completed: todo.done }">
+  <label>
+    <input type="checkbox" [(ngModel)]="todo.done">
+    <span>{{ todo?.txt }}</span>
+    <button (click)="deleteTodo()">Delete</button>
+  </label>
 </div>
