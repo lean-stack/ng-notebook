@@ -53,4 +53,19 @@ describe('TodoInputComponent', () => {
   });
 
   // TODO: template test (fill input and trigger event)
+  // it('should emit created event on enter key in input', async(() => {
+  //   const subscription = jasmine.createSpy('subscription');
+  //   component.todoCreated.subscribe(subscription);
+
+  //   inputEl.nativeElement.value = 'Template testing';
+  //   inputEl.nativeElement.dispatchEvent(new KeyboardEvent('keyup', { 'key': 'Enter' }));
+  //   fixture.detectChanges();
+
+  //   fixture.whenStable().then(() => {
+  //     expect(subscription).toHaveBeenCalled();
+  //     expect(subscription.calls.mostRecent().args[0]).toBe('Template testing');
+  //   });
+
+  // }));
+  
 });
