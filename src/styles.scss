@@ -1,1 +1,5 @@
 @import '../node_modules/shoelace-css/source/css/shoelace.css';
+
+body {
+    border-top: 2px solid var(--color-black);
+}
