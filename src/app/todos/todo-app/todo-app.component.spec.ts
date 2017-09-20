@@ -8,6 +8,7 @@ import { TodoService } from "../todo/todo.service";
 import { TodoInputComponent } from "../todo-input/todo-input.component";
 import { TodoListComponent } from "../todo-list/todo-list.component";
 import { By } from "@angular/platform-browser";
+import { TodoItemComponent } from "../todo-item/todo-item.component";
 
 describe('TodoAppComponent', () => {
   let component: TodoAppComponent;
@@ -17,7 +18,7 @@ describe('TodoAppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule],
-      declarations: [ TodoAppComponent, TodoInputComponent, TodoListComponent ],
+      declarations: [ TodoAppComponent, TodoInputComponent, TodoListComponent, TodoItemComponent ],
       providers: [TodoService]
     })
     .compileComponents();
