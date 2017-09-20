@@ -1,5 +1,7 @@
 <div>
   <ul>
-    <todo-item *ngFor="let t of todos"></todo-item>
+    <li *ngFor="let t of todos">
+        <todo-item [todo]="t"></todo-item>
+    </li>
   </ul>
 </div>

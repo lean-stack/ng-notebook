@@ -44,4 +44,14 @@ describe('TodoListComponent', () => {
 
     expect(listEl.children.length).toBe(2);
   });
+
+  it('should set the input todo of the item components', () => {
+    component.todos = [
+      { id: 1, txt: 'Component inputs', done: true}
+    ];
+    fixture.detectChanges();
+
+    const itemComponent: TodoItemComponent = listEl.query(By.directive(TodoItemComponent)).componentInstance;
+    expect(itemComponent.todo).toBe(component.todos[0]);
+  })
 });
